@@ -7,7 +7,7 @@ Diseñe la siguiente Intefaz, la cual se compone de un __EditText__ y tres __But
 Diseñe los métodos para: 
 
 - Crear un Vector de tamaño 5 de numeros aleatorios de dos crifras y mostrarlos en el __EditText__.
-- Muestre el número (y la suma) en el vector que su suma de cifras es la mayor
+- Muestre el número (y la suma) en el vector que su suma de cifras es la mayor.
 - Diseñe una función recursiva para determinar el promedio de los números.
 
 

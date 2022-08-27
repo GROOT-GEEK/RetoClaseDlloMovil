@@ -28,25 +28,27 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     Button btn1,btn2,btn3;
     EditText edtxt1;
+    int promedio = 0 , suma2=0,numeroSum,suma,numero = 0;
+    int [] vector = new int[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         conectar();
-        int [] vector = new int[5];
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int i=0;i<vector.length;i++)
+                suma2=0;
+                for (int i=0;i<vector.length;i++){
                     vector[i] = (int) (Math.random()*90)+10;
+                    suma2+= vector[i];
+                }
                 edtxt1.setText(Arrays.toString(vector));
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
-            int  numeroSum,suma;
-            int mayor = 0;
             @Override
             public void onClick(View view) {
                 Arrays.sort(vector);
@@ -56,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                promedio = suma2 / vector.length;
+                btn3.setText("Promedio es : " +  Integer.toString(promedio));
+            }
+        });
     }
 
     private void conectar() {
@@ -65,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
         btn3=findViewById(R.id.btn3);
         edtxt1=findViewById(R.id.edtxt1);
     }
-
 
 }
